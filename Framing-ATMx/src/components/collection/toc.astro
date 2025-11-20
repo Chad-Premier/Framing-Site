@@ -1,0 +1,11 @@
+---
+const {headings} = Astro.props;
+---
+
+<ul class="ms-0.5 space-y-1 border-s-2 border-gray-100 dark:border-neutral-800">
+  {
+    headings.map((heading: any) => (
+      <li><a class="block py-1 ps-4 -ms-px border-s-2 border-transparent text-sm atm-lnk-lt" href={`#${heading.slug}`}>{heading.text}</a></li>
+    ))
+  }
+</ul>

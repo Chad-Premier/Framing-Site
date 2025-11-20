@@ -1,0 +1,79 @@
+---
+/* Revised 27-02-25 CK */
+import BridgePageTemplate from '@layouts/bridge.page.astro';
+
+const SEO = {
+  title: 'Terms & Conditions',
+  description: 'Terms and Conditions for Premier Image Services Ltd.',
+  robots: 'index,follow',
+}
+
+const headings = [
+  { depth: 1, slug: 'terms-and-conditions', text: 'Terms and Conditions' },
+  { depth: 1, slug: 'trade-accounts', text: 'Trade Accounts' },
+  { depth: 1, slug: 'prices', text: 'Prices' },
+  { depth: 1, slug: 'image-copyright', text: 'Image Copyright' },
+  { depth: 1, slug: 'trade-descriptions-act', text: 'Trade Descriptions Act' },
+  { depth: 1, slug: 'delivery', text: 'Delivery' },
+  { depth: 1, slug: 'display-goods', text: 'Display Goods' },
+  { depth: 1, slug: 'liability', text: 'Liability' },
+  { depth: 1, slug: 'insurance', text: 'Insurance' },
+  { depth: 1, slug: 'chromaluxe', text: 'Chromaluxe' },
+  { depth: 1, slug: 'orders-submitted', text: 'Orders submitted' },
+  { depth: 1, slug: 'privacy-policy', text: 'Privacy Policy' },
+  { depth: 1, slug: 'registered-office', text: 'Registered Office' },
+]
+---
+
+<BridgePageTemplate SEO={SEO} headings={headings}>
+  <main id="content" role="main">
+    <span class="atm-hd-lt text-4xl pt-4">Premier Image Services Ltd</span>
+    <h2 id="terms-and-conditions" class="atm-hd-lt text-6xl pb-4">Terms and Conditions</h2>
+    <p class="atm-txt-lt text-lg pb-2">All services and products supplied by Premier Image Services (“the company”) to customers are governed by the following general terms and conditions, which cancel out any previous terms and conditions of business.</p>
+    <p class="atm-txt-lt text-lg pb-2">All orders are accepted on the understanding that customers accept these terms and conditions. The risk in products (“the goods”) the company supplies shall pass to the customer on delivery. Title to the goods shall not pass to the customer until the company has received payment in full for the goods. Until the title to the goods has passed to the customer, the customer shall hold the goods on a fiduciary basis as the company’s bailee but may resell or use the goods in the ordinary course of its business.</p>
+  
+    <h3 id="trade-accounts" class="atm-h4-lt">Trade Accounts</h3>
+    <p class="atm-txt-lt text-lg pb-2">Trade accounts are to be paid by direct debit, which will be collected weekly 30 days from invoice, unless an alternative has been agreed in writing. Where payment is not made on time, the company reserves the right to charge interest at a rate of 8% above base.</p>
+    <p class="atm-txt-lt text-lg pb-2">All personal accounts and one off payments will be agreed on an individual basis.</p>
+  
+    <h3 id="prices" class="atm-h4-lt">Prices</h3>
+    <p class="atm-txt-lt text-lg pb-2">The price payable by the customer will be in accordance with the company price ruling at the time of acceptance of the order. The company reserves the right to alter the prices without notice. The prices on the order system will be correct at the time of ordering.</p>
+  
+    <h3 id="image-copyright" class="atm-h4-lt">Image Copyright</h3>
+    <p class="atm-txt-lt text-lg pb-2">It is a criminal offence under the Copyright Designs and Patents Act 1988 to knowingly infringe copyright. It is the customer’s responsibility to ensure that all material supplied to the Company for processing, copying or reproduction is free from any third-party claim of infringement or claim of copyright.</p>
+    <p class="atm-txt-lt text-lg pb-2">Orders are only accepted on the clear understanding that:</p>
+    <ul class="ps-6">
+      <li class="atm-txt-lt text-lg pb-2">The customer owns the copyright or that the work is out of copyright.</li>
+      <li class="atm-txt-lt text-lg pb-2">The customer has the copyright owner’s written consent. The customer indemnifies the company against all costs, claims, damages and losses of whatsoever nature arising from any action or claim brought by a third party in respect of alleged infringement of copyright.</li>
+    </ul>
+  
+    <h3 id="trade-descriptions-act" class="atm-h4-lt">Trade Descriptions Act</h3>
+    <p class="atm-txt-lt text-lg pb-2">The size of frames/prints in the price list and on the ordering system are approximate only and may be over or under the quoted size.</p>
+  
+    <h3 id="delivery" class="atm-h4-lt">Delivery</h3>
+    <p class="atm-txt-lt text-lg pb-2">All orders will be dispatched by a suitable carrier or delivery system at the discretion of the company.</p>
+    <p class="atm-txt-lt text-lg pb-2">The company shall not be liable for any damage to, discrepancies in or shortages/delay of delivered materials/goods unless notified by the customer within 48 hours of delivery.</p>
+    <p class="atm-txt-lt text-lg pb-2">Single orders over the value of £50.00 will be subject to free delivery, single orders under the value of £50.00 will be subject to a delivery charge. The delivery charge may vary.</p>
+  
+    <h3 id="display-goods" class="atm-h4-lt">Display Goods</h3>
+    <p class="atm-txt-lt text-lg pb-2">Display products and samples will be provided to the customer by the company at a discounted rate, the discounted display rate is only applicable if the customer’s account reaches a minimum of £5000.00 in the previous 12 months. The discounted display rate is variable dependent upon the product, not all products are available at a discounted rate. Chromaluxe products are not available at a discounted rate.</p>
+  
+    <h3 id="liability" class="atm-h4-lt">Liability</h3>
+    <p class="atm-txt-lt text-lg pb-2">All reasonable care is taken with materials sent to the company for processing or printing. The company’s liability for service failure, loss of or damage to photographic processing or printing shall be limited to a refund of the company’s charges for processing or printing and their replacement with unused material.</p>
+  
+    <h3 id="insurance" class="atm-h4-lt">Insurance</h3>
+    <p class="atm-txt-lt text-lg pb-2">Where the value of an order/service or material sent for processing is valued at more than the company liability, it is advised that the customer provides their own insurance.</p>
+  
+    <h3 id="chromaluxe" class="atm-h4-lt">Chromaluxe</h3>
+    <p class="atm-txt-lt text-lg pb-2">Images files submitted for Chromaluxe products must be 100% correct prior to submission. File submission requirements will be advised, editing/manipulation must be correct. Once the image is printed/pressed it is irreversible and will be subject to the full product cost. Imperfections in the metal are natural and to be expected.</p>
+  
+    <h3 id="orders-submitted" class="atm-h4-lt">Orders submitted</h3>
+    <p class="atm-txt-lt text-lg pb-2">Orders placed, are to be per customer, not per product. Multiple products for the same customer, should be placed on one order to avoid an administration charge of £5.00.</p>
+    
+    <h3 id="privacy-policy" class="atm-h4-lt">Privacy Policy</h3>
+    <p class="atm-txt-lt text-lg pb-2">The Premier Image Services Ltd privacy policy can be found on the website.</p>
+  
+    <h3 id="registered-office" class="atm-h4-lt">Registered Office</h3>
+    <p class="atm-txt-lt text-lg pb-2">Unit 1 Nat Lane Business Park, Nat Lane, Winsford, Cheshire CW7 3BS</p>
+  </main>
+</BridgePageTemplate>

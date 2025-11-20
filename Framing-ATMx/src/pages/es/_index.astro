@@ -1,0 +1,419 @@
+---
+import DefaultTemplate from '@layouts/default.astro';
+import { Image } from 'astro:assets';
+
+import FeatureImage from '@assets/index/feature.webp';
+
+import Chromaluxe from '@assets/index/chromaluxe.jpg';
+import Drytac from '@assets/index/drytac.jpg';
+import Epson from '@assets/index/epson.jpg';
+import FineArt from '@assets/index/fineart_guild.jpg';
+import FujiFilm from '@assets/index/fujifilm.jpg';
+import ZBE from '@assets/index/zbe.jpg';
+
+import Framing from '@assets/index/framing-premier.webp';
+import Restoration from '@assets/index/restoration-premier.webp';
+import Printing from '@assets/index/printing.webp';
+import Mounting from '@assets/index/mounting.webp';
+
+import IanLawson from '@assets/index/ian-lawson.jpg';
+import MarkSwinford from '@assets/index/mark-swinford.jpg';
+import SeanConboy from '@assets/index/sean.jpg';
+
+import Chromavision from '@assets/index/chromavision-room.webp';
+import Gallery from '@assets/index/gallery-room.webp';
+import Illusion from '@assets/index/illusion-room.webp';
+import Prints from '@assets/index/prints.webp';
+
+const SEO = {
+  title: 'Landing Page Test',
+  description: 'Landing Page Test',
+  robots: 'index,follow',
+};
+
+const headings:any[] = [];
+---
+
+<DefaultTemplate SEO={SEO} headings={headings}>
+  <main id="content" class="w-full justify-start" role="main">
+    <!-- Feature -->
+    <div class="w-full atm-feature-bg">
+      <Image src={FeatureImage} alt="Premier Image Services Ltd Production Facility" />
+      <div class="atm-feature-ctr">
+        <h1 class="text-5xl md:text-7xl text-gray-800">Premier Image</h1>
+        <h4 class="text-4xl text-gray-800 hidden lg:block">20 años de experiencia en impresión y enmarcación artesanal</h4>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about-us" class="w-full atm-container py-12">
+      <h4 class="atm-hd-lt text-4xl pt-4">Acerca de</h4>
+      <h2 class="atm-hd-lt text-6xl pb-4">Premier Image</h2>
+      <div class="gap-x-8 lg:columns-2">
+        <p class="atm-txt-lt text-lg">Nuestras principales actividades son la impresión fotográfica digital, la enmarcación artesanal y el montaje de obras de arte contemporáneo. Con más de 20 años de experiencia en impresión y enmarcación artesanal, hemos ayudado a artistas, ilustradores y fotógrafos de todo el Reino Unido y del extranjero a reproducir y enmarcar sus obras de arte.</p>
+        <p class="atm-txt-lt text-lg">Estamos especializados en la impresión Epson Digigraphie, que permite reproducir obras impresas con un alto nivel de calidad. Y como miembros de la Fine Art Trade Guild, usted sabe que estamos trabajando con los estándares muy altos de la Guild, dando a los compradores una mayor confianza tanto en la calidad de la obra de arte y el encuadre.</p>
+      </div>
+    </div>
+
+    <!-- Partners -->
+    <div id="partners" class="w-full bg-mauve-500 dark:bg-mauve-300">
+      <div class="h-12"></div>
+      <div class="w-full atm-container relative" data-hs-carousel='{"loadingClasses": "opacity-0", "isAutoPlay": true}'>
+        <div class="hs-carousel relative overflow-hidden w-full h-28">
+          <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+            <div class="hs-carousel-slide">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
+                <Image src={Chromaluxe} class="" alt="Chromaluxe Logo" />
+                <Image src={Drytac} class="" alt="Drytac Logo" />
+                <Image src={Epson} class="hidden md:block" alt="Epson Logo" />
+                <Image src={FineArt} class="hidden lg:block" alt="FineArt Logo" />
+              </div>
+            </div>
+    
+            <div class="hs-carousel-slide">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
+                <Image src={FujiFilm} class="" alt="FujiFilm Logo" />
+                <Image src={ZBE} class="" alt="ZBE Logo" />
+                <Image src={Chromaluxe} class="hidden md:block" alt="Chromaluxe Logo" />
+                <Image src={Drytac} class="hidden lg:block" alt="Drytac Logo" />
+              </div>
+            </div>
+    
+            <div class="hs-carousel-slide">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
+                <Image src={Epson} class="" alt="Epson Logo" />
+                <Image src={FineArt} class="" alt="FineArt Logo" />
+                <Image src={FujiFilm} class="hidden md:block" alt="FujiFilm Logo" />
+                <Image src={ZBE} class="hidden lg:block" alt="ZBE Logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-12"></div>
+    </div>
+
+    <!-- Services -->
+    <div id="services">
+      <div class="w-full atm-container pt-12">
+        <h4 class="atm-hd-lt text-4xl pt-4">Nuestra</h4>
+        <h2 class="atm-hd-lt text-6xl pb-4">Servicios</h2>
+      </div>
+      
+      <div class="w-full atm-container pb-12 gap-x-8 lg:columns-2">   
+        <p class="atm-txt-lt pb-2 text-lg">Premier Image ofrece una variedad de servicios profesionales de fotografía digital e imagen, garantizando que obtenga lo mejor de sus imágenes. Estamos equipados con la última tecnología para proporcionar la más alta calidad, impresiones Giclee de gran formato de arte a partir de sus archivos digitales originales.</p>
+        <p class="atm-txt-lt pb-2 text-lg">Estamos especializados en impresiones artísticas de archivo de gran formato utilizando tintas pigmentadas Epson de archivo de alta calidad, sobre una selección de papeles fotográficos de archivo, papeles artísticos y lienzos de primera calidad. Una vez impresas, disponemos de una gama de opciones de montaje rentables y prácticas para exponer sus obras de arte e impresiones, o podemos sugerirle una solución de enmarcado utilizando nuestra gama de molduras y montajes de muestra.</p>
+        <p class="atm-txt-lt pb-2 text-lg">Los principales servicios que ofrecemos son los siguientes, pero nos especializamos en mucho más, por favor póngase en contacto con nosotros si el servicio que necesita no está en la lista.</p>
+        <div class="grid grid-cols-3">
+          <div></div>
+          <ul>
+            <li class="atm-txt-lt pb-2 text-lg"><a href="/en/#framing">Enmarcado</a></li>
+            <li class="atm-txt-lt pb-2 text-lg"><a href="/en/#restoration"}>Restauración digital</a></li>
+            <li class="atm-txt-lt pb-2 text-lg"><a href="/en/#printing">Impresión</a></li>
+            <li class="atm-txt-lt pb-2 text-lg"><a href="/en/#mounting">Montaje</a></li>
+          </ul>
+          <div></div>
+        </div>
+      </div>
+    
+      <div id="framing" class="w-full atm-container py-12">
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <Image src={Framing} class="w-full" alt="Picture framing" />
+          </div>
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Enmarcación</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Ofrecemos un servicio profesional de enmarcación de cuadros para el mercado de bellas artes, profesionales del arte y galerías. Nuestro servicio de montaje y enmarcado de obras de arte in situ dará a sus imágenes el acabado de alta calidad que realmente se merecen.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Ofrecemos servicios de enmarcación por encargo o marcos hechos a medida según sus especificaciones.</p>
+              <p class="atm-txt-lt pb-2 text-lg">También puede elegir entre nuestros marcos de tamaño estándar que vienen en cajas listas para entregar a sus clientes. Ofrecemos los cinco estándares de enmarcación que pueden seguir los enmarcadores de cuadros, desde la enmarcación económica hasta la enmarcación estándar de museo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="restoration" class="w-full atm-container py-12">
+        <Image src={Restoration} class="w-full lg:hidden" alt="Digital picture restoration" />
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Restauración digital</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Premier Image ofrece un servicio de retoque y restauración de fotografías. El tratamiento digital de imágenes se utiliza para mejorar la calidad de las imágenes retocando escaneados de películas fotográficas e impresiones, así como para restaurar imágenes de recuerdos antiguos.</p>
+              <p class="atm-txt-lt pb-2 text-lg">El procesamiento digital también se utiliza para alterar imágenes de cámaras digitales, por ejemplo, eliminando imperfecciones, suprimiendo elementos no deseados captados accidentalmente por la cámara, añadiendo un fondo diferente y produciendo así una nueva fotografía.</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <Image src={Restoration} class="w-full hidden lg:block" alt="Digital picture restoration" />
+          </div>
+        </div>
+      </div>
+    
+      <div id="printing" class="w-full atm-container py-12">
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <Image src={Printing} class="w-full" alt="Printing portraiture" />
+          </div>
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Impresión</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Ofrecemos una gama completa de servicios de impresión fotográfica a fotógrafos de bellas artes, artistas digitales, ilustradores, galerías y empresas comerciales.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Utilizando las últimas impresoras digitales y procesadores de hasta 30 pulgadas de ancho a cualquier longitud de impresión.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Impresiones giclée, de inyección de tinta y sobre lienzo en las últimas impresoras de inyección de tinta Epson utilizando 11 tintas Epson UltraChrome® HDR y una gran variedad de papeles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="mounting" class="w-full atm-container py-12">
+        <Image src={Mounting} class="w-full aspect-video lg:hidden" alt="Digital picture restoration" />
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Montaje</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Disponemos de una extensa gama de cartones de montaje que ofrece una amplia selección de colores, texturas, estilos y propiedades para adaptarse a sus obras de arte. Ahora ofrecemos un completo servicio de corte de soportes.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Con sólo pulsar un botón, podemos proporcionarle un único montaje utilizando la última tecnología de corte de montajes.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Podemos montar sus obras de arte listas para enmarcar o, por supuesto, ofrecerle un servicio completo de montaje y enmarcado.</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <Image src={Mounting} class="w-full hidden lg:block" alt="Digital picture restoration" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <div id="testimonials" class="w-full bg-mauve-500 dark:bg-mauve-300">
+    <div class="h-6"></div>
+    <div class="w-full atm-container relative" data-hs-carousel='{"loadingClasses": "opacity-0", "isAutoPlay": true}'>
+      <h4 class="atm-hd-dk text-4xl pt-4">Nuestra</h4>
+      <h2 class="atm-hd-dk text-6xl pb-4">Clientes</h2>
+      <div class="h-6"></div>
+      <div class="hs-carousel relative overflow-hidden w-full" style="height: 27rem">
+        <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+          <div class="hs-carousel-slide">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8">
+              <div class="grid grid-cols-7">
+                <Image src={IanLawson} alt="Ian Lawson" />
+                <div class="col-span-6">
+                  <h2 class="atm-hd-dk text-3xl">Ian Lawson</h2>
+                  <h4 class="atm-hd-dk text-xl"><i>Ian Lawson Fotografía</i></h4>
+                  <p class="atm-txt-dk pb-2">Trabajar con un laboratorio y una empresa de impresión que reconoce lo importante que es tu trabajo como fotógrafo y lo trata con el mismo nivel de cuidado y consideración que tú es raro hoy en día.</p>
+                  <p class="atm-txt-dk pb-2">Con Premier tienes garantizadas unas impresiones preciosas y su capacidad para cumplir plazos ajustados, asegurando que recibo el mejor producto posible a tiempo y dentro del presupuesto.</p>
+                  <p class="atm-txt-dk pb-2">Sé que puedo confiar en Premier para que me proporcione todos los servicios profesionales que necesito para imprimir, enmarcar y exponer. Y lo que es más importante, me hacen sentir valorado.</p>
+                </div>
+              </div>
+              <div class="hidden lg:block">
+                <div class="grid grid-cols-7">
+                  <Image src={MarkSwinford} alt="Mark Swinford" />
+                  <div class="col-span-6">
+                    <h2 class="atm-hd-dk text-3xl">Mark Swinford</h2>
+                    <h4 class="atm-hd-dk text-xl"><i>Mark Swinford Fotografía</i></h4>
+                    <p class="atm-txt-dk pb-2">Sólo un correo electrónico rápido para dar las gracias a David y a todo el equipo de Premier, el servicio es absolutamente excelente y la calidad impresionante.</p>
+                    <p class="atm-txt-dk pb-2">David ha sido un gran apoyo, tener una persona que realmente se preocupa por nosotros y ofrece ideas para ayudar a mejorar nuestra gama de productos, además de dispuestos a apresurar el trabajo ocasional a través de que es urgente hace una gran diferencia, para nosotros es el toque personal que el laboratorio tiene junto con ir esa milla extra es lo que hace la diferencia.</p>
+                    <p class="atm-txt-dk pb-2">Gracias equipo Premier y una gran palmadita en la espalda a David por la introducción.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="hs-carousel-slide">
+            <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+              <div class="grid grid-cols-7">
+                <Image src={SeanConboy} alt="Sean Conboy" />
+                <div class="col-span-6">
+                  <h2 class="atm-hd-dk text-3xl">Sean Conboy</h2>
+                  <h4 class="atm-hd-dk text-xl"><i>Sean Conboy Fotografía Arquitectónica y Comercial</i></h4>
+                  <p class="atm-txt-dk pb-2">Después de ser invitado por David Nield a Premier Image lab en Winsford todo lo que puedo decir es wow.</p>
+                  <p class="atm-txt-dk pb-2">La escala, el diseño y la profesionalidad de la operación era de primera clase, un verdadero laboratorio fotográfico. La calidad del trabajo que han realizado para algunas de las sedes corporativas de mis clientes ha sido fantástica.</p>
+                  <p class="atm-txt-dk pb-2">No hay nada mejor que ver la alta calidad de impresión y presentación de su trabajo, haciendo todo el esfuerzo de lograr la imagen vale la pena para usted y su cliente.</p>
+                </div>
+              </div>
+              <div class="hidden lg:block">
+                <div class="grid grid-cols-7">
+                  <Image src={IanLawson} alt="Ian Lawson" />
+                  <div class="col-span-6">
+                    <h2 class="atm-hd-dk text-3xl">Ian Lawson</h2>
+                    <h4 class="atm-hd-dk text-xl"><i>Ian Lawson Fotografía</i></h4>
+                    <p class="atm-txt-dk pb-2">Trabajar con un laboratorio y una empresa de impresión que reconoce lo importante que es tu trabajo como fotógrafo y lo trata con el mismo nivel de cuidado y consideración que tú es raro hoy en día.</p>
+                    <p class="atm-txt-dk pb-2">Con Premier tienes garantizadas unas impresiones preciosas y su capacidad para cumplir plazos ajustados, asegurando que recibo el mejor producto posible a tiempo y dentro del presupuesto.</p>
+                    <p class="atm-txt-dk pb-2">Sé que puedo confiar en Premier para que me proporcione todos los servicios profesionales que necesito para imprimir, enmarcar y exponer. Y lo que es más importante, me hacen sentir valorado.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="hs-carousel-slide">
+            <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+              <div class="grid grid-cols-7">
+                <Image src={MarkSwinford} alt="Mark Swinford" />
+                <div class="col-span-6">
+                  <h2 class="atm-hd-dk text-3xl">Mark Swinford</h2>
+                  <h4 class="atm-hd-dk text-xl"><i>Mark Swinford Fotografía</i></h4>
+                  <p class="atm-txt-dk pb-2">Sólo un correo electrónico rápido para dar las gracias a David y a todo el equipo de Premier, el servicio es absolutamente excelente y la calidad impresionante.</p>
+                  <p class="atm-txt-dk pb-2">David ha sido un gran apoyo, tener una persona que realmente se preocupa por nosotros y ofrece ideas para ayudar a mejorar nuestra gama de productos, además de dispuestos a apresurar el trabajo ocasional a través de que es urgente hace una gran diferencia, para nosotros es el toque personal que el laboratorio tiene junto con ir esa milla extra es lo que hace la diferencia.</p>
+                  <p class="atm-txt-dk pb-2">Gracias equipo Premier y una gran palmadita en la espalda a David por la introducción.</p>
+                </div>
+              </div>
+              <div class="hidden lg:block">
+                <div class="grid grid-cols-7">
+                  <Image src={SeanConboy} alt="Sean Conboy" />
+                  <div class="col-span-6">
+                    <h2 class="atm-hd-dk text-3xl">Sean Conboy</h2>
+                    <h4 class="atm-hd-dk text-xl"><i>Sean Conboy Fotografía Arquitectónica y Comercial</i></h4>
+                    <p class="atm-txt-dk pb-2">Después de ser invitado por David Nield a Premier Image lab en Winsford todo lo que puedo decir es wow.</p>
+                    <p class="atm-txt-dk pb-2">La escala, el diseño y la profesionalidad de la operación era de primera clase, un verdadero laboratorio fotográfico. La calidad del trabajo que han realizado para algunas de las sedes corporativas de mis clientes ha sido fantástica.</p>
+                    <p class="atm-txt-dk pb-2">No hay nada mejor que ver la alta calidad de impresión y presentación de su trabajo, haciendo todo el esfuerzo de lograr la imagen vale la pena para usted y su cliente.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div id="products">
+    <div class="w-full atm-container pt-12">
+      <h4 class="atm-hd-lt text-4xl pt-4">Nuestra</h4>
+      <h2 class="atm-hd-lt text-6xl pb-4">Productos</h2>
+    </div>
+  
+    <div class="w-full atm-container pb-12 gap-x-8 lg:columns-2">
+      <p class="atm-txt-lt pb-2 text-lg">Ofrecemos una gama de productos rentables producidos profesionalmente para el mercado de las bellas artes, los profesionales del arte y las galerías.</p>
+      <p class="atm-txt-lt pb-2 text-lg">Cada una de nuestras gamas de productos puede adaptarse a sus especificaciones, para cumplir los requisitos de su empresa y de su marca.</p>
+      <p class="atm-txt-lt pb-2 text-lg">Si tiene en mente un producto específico, póngase en contacto con nosotros para conocer nuestras opciones a medida.</p>
+      <p class="atm-txt-lt pb-2 text-lg">A continuación se indican los principales productos que fabricamos, pero estamos especializados en muchos más.</p>
+      <div class="grid grid-cols-3">
+        <div></div>
+        <div>
+          <p class="atm-txt-lt pb-2 text-lg"><a href="/en/#chromavision">Chromavision</a></p>
+          <p class="atm-txt-lt pb-2 text-lg"><a href="/en/#gallery">Gallery</a></p>
+          <p class="atm-txt-lt pb-2 text-lg"><a href="/en/#illusion">Illusion</a></p>
+          <p class="atm-txt-lt pb-2 text-lg"><a href="/en/#prints">Impresiones</a></p>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  
+    <div id="chromavision" class="w-full atm-container py-12">
+      <Image src={Chromavision} class="w-full lg:hidden" alt="Chromavision in room scene" />
+      <div class="w-full grid lg:grid-cols-2 gap-x-8">
+        <div class="flex justify-center items-center">
+          <div>
+            <h3 class="atm-hd-lt text-5xl pb-2">Gama Chromavision</h3>
+            <p class="atm-txt-lt pb-2 text-lg">Lo último en calidad de impresión de alta definición, las exclusivas láminas de aluminio de Chromavision producen imágenes extremadamente vibrantes.</p>
+            <p class="atm-txt-lt pb-2 text-lg">Estas obras de arte se crean mediante un método llamado sublimación de tinta. A diferencia de la impresión sobre superficies, con este proceso su imagen está dentro del material, lo que significa una mayor protección y ayuda a mantener sus vibrantes colores.</p>
+            <p class="atm-txt-lt pb-2 text-lg">En Premier Image nos encontramos en la envidiable posición de ser uno de los pocos fabricantes capaces de sublimar en gran formato (70×42 pulgadas como máximo) Chromavision se puede suministrar en una serie de acabados que están disponibles bajo pedido.</p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <Image src={Chromavision} class="w-full hidden lg:block" alt="Chromavision in room scene" />
+        </div>
+      </div>
+    </div>
+  
+    <div id="gallery" class="w-full atm-container py-12">
+      <div class="w-full grid lg:grid-cols-2 gap-x-8">
+        <div class="flex justify-center items-center">
+          <Image src={Gallery} class="w-full" alt="Gallery frame in room scene" />
+        </div>
+        <div class="flex justify-center items-center">
+          <div>
+            <h3 class="atm-hd-lt text-5xl pb-2">Gama Gallery</h3>
+            <p class="atm-txt-lt pb-2 text-lg">En Premier Image le ofrecemos la oportunidad de enmarcar su imagen con una montura y cristal. Esta es la forma tradicional de presentar su imagen, tenemos una fantástica gama de marcos.</p>
+            <p class="atm-txt-lt pb-2 text-lg">Todos nuestros marcos son cortados a mano y acabados por nuestro experimentado equipo en Cheshire. El marco se complementará con un cristal auténtico y una cartulina de calidad cortada a medida en nuestra cortadora de monturas de última generación para proteger y realzar el efecto de su imagen.</p>
+            <p class="atm-txt-lt pb-2 text-lg">Todo esto lo realiza nuestro equipo de gran talento y experiencia de acuerdo con las normas del Gremio de Bellas Artes. Disponemos de varios tipos de acristalamiento, por ejemplo: cristal de museo y acrílico, así como una gama de molduras y cartulinas de montaje bajo pedido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="illusion" class="w-full atm-container py-12">
+      <Image src={Illusion} class="w-full aspect-video lg:hidden" alt="Illusion frame in room scene" />
+      <div class="w-full grid lg:grid-cols-2 gap-x-8">
+        <div class="flex justify-center items-center">
+          <div>
+            <h3 class="atm-hd-lt text-5xl pb-2">Gama Illusion</h3>
+            <p class="atm-txt-lt pb-2 text-lg">La gama Illusion tiene el acabado artesanal y los marcos de madera del marco Gallery con el toque contemporáneo del cristal en lugar de una tarjeta de montaje. Esto crea la "ilusión" de una imagen flotante, de ahí su nombre.</p>
+            <p class="atm-txt-lt pb-2 text-lg">Este concepto se diseñó para atraer la imagen a la habitación y la habitación a la imagen, ya que la pared se convierte en parte de la presentación de la imagen.</p>
+            <p class="atm-txt-lt pb-2 text-lg">Se trata de una obra de arte difícil de producir, pero los expertos de Premier Image llevan muchos años creando ejemplos de calidad para nuestros clientes.</p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <Image src={Illusion} class="w-full hidden lg:block" alt="Illusion frame in room scene" />
+        </div>
+      </div>
+    </div>
+  
+    <div id="prints" class="w-full atm-container py-12">
+      <div class="w-full grid lg:grid-cols-2 gap-x-8">
+        <div class="flex justify-center items-center">
+          <Image src={Prints} class="w-full" alt="Printing artwork" />
+        </div>
+        <div class="flex justify-center items-center">
+          <div>
+            <h3 class="atm-hd-lt text-5xl pb-2">Gama de Impresiones</h3>
+            <p class="atm-txt-lt pb-2 text-lg">Premier Image ofrece un servicio de retoque y restauración de fotografías. El procesamiento digital de imágenes se utiliza para mejorar la calidad de las imágenes mediante el retoque de escaneados de películas fotográficas e impresiones, así como para restaurar imágenes de recuerdos antiguos.</p>
+            <p class="atm-txt-lt pb-2 text-lg">El procesamiento digital también se utiliza para alterar imágenes de cámaras digitales, por ejemplo, eliminando imperfecciones, eliminando elementos no deseados captados accidentalmente por la cámara, añadiendo un fondo diferente y, por lo tanto, produciendo una nueva fotografía.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact-us" class="w-full bg-mauve-500 dark:bg-mauve-300">
+    <div class="w-full atm-container py-12">
+      <div class="w-full mt-3 grid lg:grid-cols-2 gap-x-8">
+        <div>
+          <h4 class="atm-hd-dk text-4xl pt-4">Contacto</h4>
+          <h2 class="atm-hd-dk text-6xl pb-4">Premier Image</h2>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Dirección:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">Premier Image Services Ltd</p>
+              <p class="atm-txt-dk text-lg">Unit 3</p>
+              <p class="atm-txt-dk text-lg">Premier Park</p>
+              <p class="atm-txt-dk text-lg">Road One</p>
+              <p class="atm-txt-dk text-lg">Winsford</p>
+              <p class="atm-txt-dk text-lg">CW7 3PH</p>
+            </div>
+          </div>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Email:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">customerservice@premierimage.co.uk</p>
+            </div>
+          </div>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Teléfono:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">(+44) 01606 596813</p>
+            </div>
+          </div>
+        </div>
+  
+        <div
+          data-service="googlemaps"
+          data-id="!1m14!1m8!1m3!1d9559.643874374622!2d-2.4994458!3d53.2015129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487af945e35c8d41%3A0x94be107dfa0670bc!2sPremier%20Image!5e0!3m2!1sen!2suk!4v1676553118634!5m2!1sen!2suk"
+          data-autoscale>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultTemplate>

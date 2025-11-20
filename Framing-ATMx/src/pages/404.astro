@@ -1,0 +1,23 @@
+---
+import DefaultTemplate from '@layouts/default.astro';
+import ArrowLeft2 from '@assets/svg/arrow-left-2.astro';
+
+const SEO = {
+  title: '404',
+  description: "Oops, something went wrong, we couldn't find your page",
+  robots: 'index,follow',
+}
+
+const headings:any[] = [];
+---
+
+<DefaultTemplate SEO={SEO} headings={headings}>
+  <section class="atm-container">
+    <div class="text-center py-10 px-4 sm:px-6 lg:px-8">
+      <h1 class="atm-hd-lt block text-7xl font-bold sm:text-9xl">404</h1>
+      <p class="atm-txt-lt mt-3">Oops, something went wrong.</p>
+      <p class="atm-txt-lt">Sorry, we couldn't find your page.</p>
+    </div>
+  </section>
+  
+</DefaultTemplate>

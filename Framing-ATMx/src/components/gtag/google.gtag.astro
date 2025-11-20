@@ -1,0 +1,32 @@
+<script>
+  import './google.gtag.set';
+</script>
+  
+<script
+  is:inline
+  type="text/plain"
+  data-category="analytics">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  gtag('consent', 'update', {'analytics_storage': 'granted'});
+</script>
+  
+<script
+  is:inline
+  type="text/plain"
+  data-category="!analytics">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  gtag('consent', 'update', {'analytics_storage': 'denied'});
+  window['ga-disable-G-KXDX6YDMY9'] = true;
+</script>
+  
+<script
+  is:inline
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-KXDX6YDMY9">
+</script>

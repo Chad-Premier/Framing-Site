@@ -1,0 +1,51 @@
+---
+import Default from "./default.astro";
+import SideBar from "@components/side.bar.astro";
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const { frontmatter, headings /*, url */ } = Astro.props;
+var { SEO } = Astro.props;
+SEO = {
+  title: frontmatter.title,
+  description: frontmatter.description,
+  robots: frontmatter.robots,
+}
+---
+
+<Default SEO={SEO} headings={headings}>
+  <section class="atm-container">
+    <div class="grid grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="col-span-3">
+        <h3 class="atm-hd-lt text-5xl pb-2">{frontmatter.title}</h3>
+        <span class="atm-lnk-lt text-sm flex justify-between">
+          <span class="atm-txt-lt pb-4">
+            By <span class="italic">{frontmatter.author} </span>
+            on <span class="italic">{new Date(frontmatter.pubDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-')} </span>
+            in <a class="atm-lnk-lt capitalize italic" href={`/cat/${lang}/1`}>{frontmatter.category}</a>
+          </span>
+          <span class="">
+            <!--
+            <div class="ph--facebook-logo atm-lnk-lt" data-href={`${url.replace("src/content", "https://" + import.meta.env.URL).replace(".mdx", "")}`} data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Shares</a></div>
+            <a class="ph--twitter-logo atm-lnk-lt" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+            -->
+          </span>
+        </span>
+        
+        <slot/>
+        <div class="pt-2 flex flex-wrap gap-2">
+          {
+            frontmatter.tags.map((tag: string) => (
+            <a class="atm-tag-button-lt" href={`/tag/${lang}/${tag}/1`}>
+              {tag}
+            </a>
+            ))
+          }
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <SideBar headings={headings} open={true}/>
+      </div>
+    </div>
+  </section>
+</Default>

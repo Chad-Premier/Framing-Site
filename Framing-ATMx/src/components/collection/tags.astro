@@ -1,0 +1,17 @@
+---
+import { allPosts } from "@components/collection/all.posts";
+import { limitedLinks } from '@components/collection/limited.links';
+import { getLangFromUrl } from '@i18n/utils';
+import { env, envParse } from '@components/env';
+
+const lang = getLangFromUrl(Astro.url);
+const tags = limitedLinks((await allPosts(lang)).map((post) => post.data.tags).flat(), envParse(env.TAG_LIST_LIMIT));
+---
+
+{
+  tags.sort().map((tag) => (
+  <a class="atm-tag-button-lt" href={`/tag/${lang}/${tag.name}/1`}>
+    {tag.name}
+  </a>
+  ))
+}

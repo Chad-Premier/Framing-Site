@@ -1,0 +1,24 @@
+---
+import { rawPosts } from '@components/collection/all.posts';
+import { type GetStaticPaths } from 'astro';
+
+import PostSummary from '@components/collection/post.summary.astro';
+import { languages } from '@i18n/locales';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const langs = Object.keys(languages);
+ 
+  return langs.flatMap((lang) => {
+    const filteredPosts = rawPosts.filter((post) => post.slug.startsWith(lang));
+    return paginate(filteredPosts, {
+      params: { lang },
+      //pageSize: import.meta.env.POST_SUMMARY_LIMIT,
+      pageSize: 20,
+    });
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<PostSummary page={page} />

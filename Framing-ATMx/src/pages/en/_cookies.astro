@@ -1,0 +1,101 @@
+---
+import BridgePageTemplate from '@layouts/bridge.page.astro';
+import { env } from '@components/env';
+
+const SEO = {
+  title: 'Cookie Policy',
+  description: 'Cookie policy for Premier Image Services Ltd',
+  robots: 'index,follow',
+}
+
+const headings = [
+  { depth: 1, slug: 'cookie-policy', text: 'Cookie Policy' },
+  { depth: 1, slug: 'how-to-manage-the-cookies', text: 'How to manage the Cookies' },
+  { depth: 1, slug: 'cookie-categories', text: 'Cookie Categories' },
+]
+---
+
+<BridgePageTemplate SEO={SEO} headings={headings}>
+  <main id="content" role="main">
+    <span id="cookie-policy" class="atm-h4-lt">Premier Image Services Ltd</span>
+    <h2 class="atm-hd-lt text-6xl pb-4">Cookie Policy</h2>
+    <p class="atm-txt-lt text-lg pb-2">Cookies are small files that are placed on your device, with your permission, enabling websites to store data such as the contents of your shopping basket or which pages you have visited.</p>
+    <!-- <p class="atm-txt-lt text-lg pb-2">We use cookies to gather information on how you use the {env.URL} website, such as the pages that you visit ending with {env.URL} in the URL.</p> -->
+  
+    <h3 id="how-to-manage-the-cookies" class="atm-h4-lt">How to manage the Cookies</h3>
+    <p class="atm-txt-lt text-lg pb-2">Until visitor consent is granted/rejected no cookies will be saved to the device. When consent is granted/rejected, the appropriate <i>Necessary Cookies</i> with your prefences will be saved to your device.</p>
+    <p class="atm-txt-lt text-lg pb-2">Only once permitted will other cookies be saved to the device. Consent for cookies on this website can be changed at any time via the <a href="" class="atm-lnk-cl" data-cc="show-preferencesModal">Cookie Settings</a>.</p>
+    <p class="atm-txt-lt text-lg pb-2">If you wish to remove all cookies, you must delete the cookies in your browser.</p>
+
+    <h3 id="cookie-categories" class="atm-h4-lt">Cookie Categories</h3>
+    <p class="atm-txt-lt text-lg pb-2">We use three different types of cookie. You can choose which category or individual cookies you're happy for us to use.</p>
+
+    <div class="ps-6">
+      <h4 class="atm-hd-lt text-2xl">Necessary Cookies</h4>
+      <p class="atm-txt-lt text-lg pb-2">When you consent or withdraw from using cookies on this site, your preferences are stored to cookies.</p>
+      <p class="atm-txt-lt text-lg pb-2">These cookies include:</p>
+
+      <div class="flex flex-col">
+        <div class="-m-1.25 overflow-x-auto">
+          <div class="p-1.25 inline-block">
+            <div class="overflow-hidden">
+              <table class="min-w-full ms-6">
+                <tbody class="divide-y">
+                  <tr class="border-b atm-border">
+                    <td class="atm-txt-lt text-base pe-6 py-4">cc_cookie</td>
+                    <td class="atm-txt-lt text-base ps-6 py-4">stores Cookie Consent preferences.</td>
+                  </tr>
+                  <tr class="border-b atm-border">
+                    <td class="atm-txt-lt text-base pe-6 py-4">im_googlemaps</td>
+                    <td class="atm-txt-lt text-base ps-6 py-4">stores preferences for external Google Maps content/cookies.</td>
+                  </tr>
+                  <tr>
+                    <td class="atm-txt-lt text-base pe-6 py-4">im_youtube</td>
+                    <td class="atm-txt-lt text-base ps-6 py-4">stores preferences for external YouTube content/cookies.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      <h4 class="atm-h6-lt">Analytics Cookies</h4>
+      <p class="atm-txt-lt text-lg pb-2">We use Google Analytics cookies to monitor how you use the {env.URL} website.</p>
+      <p class="atm-txt-lt text-lg pb-2">These cookies include:</p>
+
+      <div class="flex flex-col">
+        <div class="-m-1.25 overflow-x-auto">
+          <div class="p-1.25 inline-block">
+            <div class="overflow-hidden">
+              <table class="min-w-full ms-6">
+                <tbody class="divide-y">
+                  <tr class="border-b atm-border">
+                    <td class="atm-txt-lt text-base pe-6 py-4">_ga</td>
+                    <td class="atm-txt-lt text-base ps-6 py-4">first-party cookie used by Google Analytics to distinguish unique users and sessions.</td>
+                  </tr>
+                  <tr>
+                    <td class="atm-txt-lt text-base pe-6 py-4">_ga_&#91container-id&#93</td>
+                    <td class="atm-txt-lt text-base ps-6 py-4">tracking cookie set by Google Analytics 4 (GA4) to identify unique users and sessions</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="atm-txt-lt text-lg py-2">Detailed information can be found in the <a href="https://support.google.com/analytics/answer/11397207?hl=en&ref_topic=11151952&sjid=9672465013564794113-EU">Google's Anayltic support pages</a>. We use the these cookies to determine:</p>
+      <ul>
+        <li class="atm-txt-lt ps-6 text-lg pb-2">From where visitors are directed to this site</li>
+        <li class="atm-txt-lt ps-6 text-lg pb-2">What pages visitors view, and long they spend on each page</li>
+        <li class="atm-txt-lt ps-6 text-lg pb-2">What visitors interact with whilst you're visiting the site</li>
+      </ul>
+      -->
+
+      <h4 class="atm-h6-lt">External Content Cookies</h4>
+      <p class="atm-txt-lt text-lg pb-2">Content hosted externally by third parties will utilise there own cookies. These cookies are subject to the terms and conditions, and privacy policies of those third parties.</p>
+    </div>
+  </main>
+</BridgePageTemplate>

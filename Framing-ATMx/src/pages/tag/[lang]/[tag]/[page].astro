@@ -1,0 +1,38 @@
+---
+import { rawPosts } from '@components/collection/all.posts';
+import { type GetStaticPaths } from 'astro';
+
+import PostSummary from '@components/collection/post.summary.astro';
+import { languages } from '@i18n/locales';
+import { env, envParse } from '@components/env';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = rawPosts;
+  const tags: string[] = [];
+  const langs = Object.keys(languages);
+  
+  posts.forEach((post) => {
+    post.data.tags.forEach((tag) => tags.push(tag.toLowerCase()));
+  });
+
+  return langs.flatMap((lang) => {
+    const firstFilterPosts = posts.filter((post) => post.slug.startsWith(lang));
+
+    return tags.flatMap((tag) => {
+      const secondFilterPosts = firstFilterPosts.filter((post) => 
+        post.data.tags.map((tag) => tag.toLowerCase()).includes(tag)
+      );
+
+      return paginate(secondFilterPosts, {
+        params: { tag, lang },
+        pageSize: envParse(env.POST_SUMMARY_LIMIT),
+      });
+    })
+  });
+}) satisfies GetStaticPaths;
+
+//const { tag } = Astro.params;
+const { page } = Astro.props;
+---
+
+<PostSummary page={page} />

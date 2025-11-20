@@ -1,0 +1,122 @@
+---
+import SunLight from '@assets/svg/sun-light.astro';
+import MoonLight from '@assets/svg/moon-light.astro';
+import Hamburger from '@assets/svg/hamburger.astro';
+import FlagUK from '@assets/svg/flag.uk.astro';
+import FlagES from '@assets/svg/flag.es.astro';
+import FlagFR from '@assets/svg/flag.fr.astro';
+import '@styles/base.css';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import CarrotDown from '@assets/svg/carrot-down.astro';
+import { env } from '@components/env';
+
+const lang = getLangFromUrl(Astro.url);
+const i18n = '/'+lang+'/';
+const t = useTranslations(lang);
+
+const { SEO } = Astro.props;
+
+const defaults = {
+  href: "https://" + env.URL + lang,
+  geoRegion: env.GEO_REGION,
+  geoPlacename: env.GEO_PLACENAME,
+  geoPosition: env.GEO_POSITION_LAT + ";" + env.GEO_POSITION_LONG,
+  icbm: env.ICBM_LAT + ", " + env.ICBM_LONG,
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="robots" content={env.ROBOTS_ENABLED == 'true' ? SEO.robots : 'noindex,nofollow'}>
+
+    <meta http-equiv="content-language" content="en">
+    <link rel="canonical" hreflang="en-GB" href={defaults.href}>
+
+    <meta name="description" content={SEO.description}>
+		<title>{SEO.title}</title>
+
+    <meta name="geo.region" content={defaults.geoRegion}>
+    <meta name="geo.placename" content={defaults.geoPlacename}>
+    <meta name="geo.position" content={defaults.geoPosition}>
+    <meta name="ICBM" content={defaults.icbm}>
+
+    <link rel="icon" type="image/png" href={`/favicon-32x32.png`}>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+	</head>
+
+	<body class="min-h-screen flex flex-col atm-body">
+    <!-- Header -->
+    <header class="atm-body sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-3 sm:py-0">
+      <nav class="atm-container relative w-full lg:flex lg:items-center lg:justify-between" aria-label="Global">
+        <div class="flex items-center justify-between">
+          <a class="inline-flex items-center" href={`/${lang}/`} aria-label="Brand">
+            <h6 class="font-semibold atm-h6-lt ps-2 pb-3">justaskframing.co.uk</h6>
+          </a>
+   
+          <div class="grow"></div>
+         
+          <div class="lg:hidden">
+            <div class="pe-5">
+              <button type="button" class="hs-dark-mode-active:hidden block hs-dark-mode group items-center font-medium" data-hs-theme-click-value="dark" aria-label="Light Mode Toggle"><SunLight/></button>
+              <button type="button" class="hs-dark-mode-active:block hidden hs-dark-mode group items-center font-medium" data-hs-theme-click-value="light" aria-label="Dark Mode Toggle"><MoonLight/></button>
+            </div>
+          </div>
+   
+          <div class="lg:hidden">
+            <button type="button" class="p-2 inline-flex justify-center items-center gap-2 font-medium text-gray-600 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-200 align-middle focus:outline-none transition-all text-sm" data-hs-overlay="#hs-overlay-right" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+              <Hamburger/>
+            </button>
+          </div>
+        </div>     
+   
+        <div class="lg:block hidden">
+          <div class="ms-5 ps-5 border-l atm-border">
+            <button type="button" class="hs-dark-mode-active:hidden block hs-dark-mode group items-center font-medium" data-hs-theme-click-value="dark" aria-label="Light Mode Toggle"><SunLight/></button>
+            <button type="button" class="hs-dark-mode-active:block hidden hs-dark-mode group items-center font-medium" data-hs-theme-click-value="light" aria-label="Dark Mode Toggle"><MoonLight/></button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <main id="content" class="pt-3">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="atm-container sticky top-[100vh] w-full pb-6 pt-12">    
+      <div class="pt-5 mt-3 border-t atm-border">
+        <div class="sm:flex sm:justify-between sm:items-center">
+          <div class="flex items-center gap-x-3">
+            <p class="text-xs sm:text-sm atm-lnk-lt">
+              justaskframing.co.uk is a brand of <a class="atm-lnk-cl text-sm" href="https://premierimage.co.uk/">Premier Image Services Ltd</a>.
+            </p>
+          </div>
+    
+          <div class="flex justify-between items-center">  
+            <div class="hs-dropdown relative inline-flex [--placement:top-left]">
+              <button id="footer-language-dropdown" type="button" class="hs-dropdown-toggle px-3 inline-flex items-center gap-x-2 text-sm disabled:pointer-events-none capitalize atm-lnk-lt">
+                {
+                  lang == "en" ? <FlagUK/>
+                    : lang == "fr" ? <FlagFR/>
+                      : <FlagES/>
+                }
+                {t('language')}
+                <CarrotDown/>
+              </button>
+
+              <div class="hs-dropdown-menu w-40 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-10 bg-white shadow-md rounded-lg p-2 dark:bg-stone-900 dark:border dark:border-gray-700 dark:divide-gray-700" aria-labelledby="footer-language-dropdown">
+                <a class="atm-i18n-btn-options atm-lnk-lt" href={Astro.url.pathname.replace(i18n, '/en/')}><FlagUK/>English</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="preline/dist/preline.js"></script>

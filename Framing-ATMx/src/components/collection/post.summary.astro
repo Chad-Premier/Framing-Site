@@ -1,0 +1,77 @@
+---
+import Image from "astro/components/Image.astro";
+import BridgePageTemplate from "@layouts/bridge.page.astro";
+import { getLangFromUrl } from '@i18n/utils';
+
+import ArrowLeft from '@assets/svg/arrow-left.astro';
+import ArrowLineLeft from '@assets/svg/arrow-line-left.astro';
+import ArrowLineRight from '@assets/svg/arrow-line-right.astro';
+import ArrowRight from '@assets/svg/arrow-right.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const { page } = Astro.props;
+const { category, tag } = Astro.params;
+
+const SEO = {
+  title: 'Landing Page Test',
+  description: 'Landing Page Test',
+  robots: 'index,follow',
+};
+
+const headings = page.data.map((post: any) => ({ depth: 1, slug: (post.data.title).toLowerCase().replace(/\s+/g, '-'), text: post.data.title  }));
+---
+
+<BridgePageTemplate SEO={SEO} headings={headings}>
+  { category ?
+    <h3 class="atm-hd-lt text-5xl pb-2">Posts by category "<i>{category}</i>"</h3>
+  : tag ?
+    <h3 class="atm-hd-lt text-5xl pb-2">Posts by tag "<i>{tag}</i>"</h3>
+  : 
+    <h3 class="atm-hd-lt text-5xl pb-2">Recent Posts</h3>
+  }
+  
+  <div class="grid grid-flow-row-dense grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-x-8">
+    {
+      page.data.map((post: any) => { return (
+        <div class="col-span-1 pb-3 ps-1 pe-1">
+          <a href={`/${post.collection}/${post.slug}`}>
+            {(post.data.splash != undefined) ? <Image src={post.data.splash} alt="thumbnail"/> : <span></span>}  
+            <h4 class="atm-hd-lt text-4xl pt-2">{post.data.title}</h4>
+            <p class="atm-lnk-lt">{post.data.description}</p>
+            <p class="atm-lnk-lt text-sm pt-4">
+              By <span class="italic">{post.data.author} </span>
+              on <span class="italic">{new Date(post.data.pubDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-')} </span>
+            </p>
+          </a>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="atm-lnk-lt text-xs">#</span>
+            {
+              post.data.tags.map((tag: string) => (
+              <a class="atm-lnk-lt text-xs underline underline-offset-1" href={`/tag/${lang}/${tag}/1`}>
+                {tag}
+              </a>
+              ))
+            }
+          </div>
+        </div>
+      )})
+    }
+  </div>
+
+  
+  <div class="flex border-t atm-border mt-24 pt-6">
+    <div class="flex flex-nowrap justify-start w-48">
+      { page.url.first ? <a href={page.url.first} class="atm-lnk-lt"><ArrowLineLeft/></a> : null}
+      { page.url.prev ? <a href={page.url.prev} class="atm-lnk-lt"><ArrowLeft/></a> : null}
+      { page.url.prev ? <span class="atm-lnk-lt ps-3">Later</span> : null}
+    </div>
+    <div class="grow flex justify-center atm-lnk-lt">
+      Page {page.currentPage} of {page.lastPage}
+    </div>
+    <div class="flex flex-nowrap justify-end w-48">
+      { page.url.next ? <span class="atm-lnk-lt pe-3">Earlier</span> : null}
+      { page.url.next ? <a href={page.url.next} class="atm-lnk-lt"><ArrowRight/></a> : null}
+      { page.url.last ? <a href={page.url.last} class="atm-lnk-lt"><ArrowLineRight/></a> : null}
+    </div>
+  </div>
+</BridgePageTemplate>

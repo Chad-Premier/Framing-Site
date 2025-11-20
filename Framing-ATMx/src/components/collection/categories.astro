@@ -1,0 +1,25 @@
+---
+import { limitedLinks } from '@components/collection/limited.links';
+import { allPosts } from '@components/collection/all.posts';
+import { getLangFromUrl } from '@i18n/utils';
+import { env, envParse } from '@components/env';
+
+const lang = getLangFromUrl(Astro.url);
+const categories = limitedLinks((await allPosts(lang)).map((post) => post.data.category), envParse(env.CATEGORY_LIST_LIMIT));
+---
+<ul>
+{
+  categories.map((category) => (
+    <li>
+      <a class="atm-lnk-lt text-sm flex justify-between py-1 ps-4 ms-1" href={`/cat/${lang}/${category.name.toLowerCase()}/1`}>
+        <span class="capitalize">
+          {category.name}
+        </span>
+          <span class="inline-flex items-center py-0.5 px-1.5 rounded-full text-xs font-medium bg-mauve-500 text-neutral-100">
+            {category.count}
+          </span>
+      </a>
+    </li>
+  ))
+}
+</ul>

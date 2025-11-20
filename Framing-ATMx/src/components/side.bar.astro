@@ -1,0 +1,92 @@
+---
+import Tags from "@components/collection/tags.astro";
+import Toc from "@components/collection/toc.astro";
+
+import CarrotUp from "@assets/svg/carrot-up.astro";
+import Categories from "@components/collection/categories.astro";
+import Recent from "@components/collection/recent.astro";
+
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { headings, open } = Astro.props;
+const isHeadings = (!headings || !headings.length) ? false : true;
+---
+
+<!--
+<div>
+  <details class="[&_svg]:open:-rotate-180" open>
+    <summary class=" atm-hd-lt pt-3 pb-1 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400">
+      <span>Premier Image</span>
+      <CarrotUp/>
+    </summary>
+    <ul class="space-y-2">
+      <li><a class="capitalize atm-lnk-lt text-sm ps-4 py-1 ms-1" href={getRelativeLocaleUrl(lang) + '#' + t('about.us').replace(/\s+/g, '-')}>{t('about.us')}</a></li>
+      <li><a class="capitalize atm-lnk-lt text-sm ps-4 py-1 ms-1" href={getRelativeLocaleUrl(lang) + '#' + t('services').replace(/\s+/g, '-')}>{t('services')}</a></li>
+      <li><a class="capitalize atm-lnk-lt text-sm ps-4 py-1 ms-1" href={getRelativeLocaleUrl(lang) + '#' + t('products').replace(/\s+/g, '-')}>{t('products')}</a></li>
+      <li><a class="capitalize atm-lnk-lt text-sm ps-4 py-1 ms-1" href={getRelativeLocaleUrl(lang) + '#' + t('contact.us').replace(/\s+/g, '-')}>{t('contact.us')}</a></li>
+    </ul>
+  </details>
+</div>
+-->
+<!--
+{
+  isHeadings &&
+  <div>
+    <details class="[&_svg]:open:-rotate-180" {open}>
+      <summary class=" atm-hd-lt pt-3 pb-1 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400">
+        <span>{t('offcanvas.contents')}</span>
+        <CarrotUp/>
+      </summary>
+      <div class="space-y-2">
+        <Toc headings={headings}/>
+      </div>
+    </details>
+  </div>
+}
+-->
+
+<!--
+<div>
+  <details class="[&_svg]:open:-rotate-180" {open}>
+    <summary class=" atm-hd-lt pt-3 pb-1 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400">
+      <span>{t('offcanvas.recent')}</span>
+      <CarrotUp/>
+    </summary>
+    <div class="space-y-2">
+      <Recent/>
+    </div>
+  </details>
+</div>
+-->
+
+<!--
+<div>
+  <details class="[&_svg]:open:-rotate-180" {open}>
+    <summary class=" atm-hd-lt pt-3 pb-1 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400">
+      <span>{t('offcanvas.categories')}</span>
+      <CarrotUp/>
+    </summary>
+    <div class="space-y-2">
+      <Categories/>
+    </div>
+  </details>
+</div>
+-->
+
+<!--
+<div>
+  <details class="[&_svg]:open:-rotate-180" {open}>
+    <summary class=" atm-hd-lt pt-3 pb-1 inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400">
+      <span>{t('offcanvas.tags')}</span>
+      <CarrotUp/>
+    </summary>
+    <div class="mt-3 flex ps-4 flex-wrap gap-2">
+      <Tags/>
+    </div>
+  </details>
+</div>
+-->

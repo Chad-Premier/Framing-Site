@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import { allPosts } from '@components/collection/all.posts';
+import { getLangFromUrl } from '@i18n/utils';
+import { env, envParse } from '@components/env';
+
+const lang = getLangFromUrl(Astro.url);
+const posts = (await allPosts(lang)).slice(0, envParse(env.RECENT_LIST_LIMIT));
+---
+
+<ul class="ms-0.5">
+  {
+    posts.map((post: any, index) => (
+      <li class="pt-2 ps-4">
+        <a class="group rounded-xl overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href={`/${post.collection}/${post.slug}`}>
+          {(post.data.splash != undefined) ? <Image src={post.data.splash} alt="thumbnail"/> : <span></span>}  
+          <p class="sm:mb-1 font-semibold atm-hd-lt">{post.data.title}</p>
+          <p class="atm-lnk-lt text-xs">{post.data.description}</p>
+        </a>
+        {((index+1) < posts.length) ? <hr class="mx-3 mt-3 atm-border"/> : <span></span>}
+      </li>
+    ))
+  }
+</ul>

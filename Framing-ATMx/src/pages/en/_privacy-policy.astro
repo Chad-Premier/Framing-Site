@@ -1,0 +1,138 @@
+---
+/* Revised 27-02-25 CK */
+import BridgePageTemplate from '@layouts/bridge.page.astro';
+import BlockQuote from '@components/html/blockquote.astro';
+import { env } from '@components/env';
+
+const SEO = {
+  title: 'Privacy Policy',
+  description: 'Privacy policy for Premier Image Services Ltd.',
+  robots: 'index,follow',
+}
+
+const headings = [
+  { depth: 1, slug: 'privacy-policy', text: 'Privacy Policy' },
+  { depth: 1, slug: 'what-is-personal-data', text: 'What is personal data' },
+  { depth: 1, slug: 'what-are-cookies', text: 'What are Cookies' },
+  //{ depth: 1, slug: 'what-personal-data-do-we-gather', text: 'What personal data do we gather' },
+  //{ depth: 1, slug: 'how-long-is-anonymised-data-retained', text: 'How long is anonymised data retained' },
+  //{ depth: 1, slug: 'what-choices-to-I-have-about-how-my-data-is-used', text: 'What choices to I have about how my data is used' },
+  { depth: 1, slug: 'external-websites-and-sources', text: 'External websites and sources' },
+  { depth: 1, slug: 'analytics', text: 'Analytics' },
+  { depth: 1, slug: 'privacy-policy-changes', text: 'Privacy Policy changes' },
+  { depth: 1, slug: 'contact-details', text: 'Contact Details' },
+]
+---
+
+<BridgePageTemplate SEO={SEO} headings={headings}>
+  <main id="content" role="main">
+    <span id="privacy-policy" class="atm-h4-lt">Premier Image Services Ltd</span>
+    <h2 class="atm-hd-lt text-6xl pb-4">Privacy Policy</h2>
+    <p class="atm-txt-lt text-lg pb-2">Premier Image Services Ltd is a manufacturer of photographic products.</p>
+    <p class="atm-txt-lt text-lg pb-2">We understand that your privacy is important to you and that you care about how your personal data is used. We are committed to the protection of your data and respect your privacy.</p>
+    <p class="atm-txt-lt text-lg pb-2">This Privacy Policy applies only to our site <i>{env.URL}</i> which is owned and operated by Premier Image Services Ltd. It describes how Premier Images Services Ltd protects and makes use of the information you give us when using this website.</p>
+    <p class="atm-txt-lt text-lg pb-2">If you have any concerns about using Google Services please click 'Reject all'.</p>
+
+    <h3 id="what-is-personal-data" class="atm-h4-lt">What is personal data</h3>
+    <p class="atm-txt-lt text-lg pb-2">Personal data is information that relates to a specific individual. This website does not collect, store or process any personal data, only data anonymised by Google is processed by Premier Image Services Ltd.</p>
+    <BlockQuote QuoteLink="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/what-is-personal-data/what-is-personal-data/#pd4" QuoteTitle="What is personal data? | ico.org.uk">
+      …The principles of data protection should therefore not apply to anonymous information, namely information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable. This Regulation does not therefore concern the processing of such anonymous information, including for statistical or research purposes.
+    </BlockQuote>
+
+    <h3 id="what-are-cookies" class="atm-h4-lt">What are Cookies</h3>
+    <p class="atm-txt-lt text-lg pb-2">Cookies are small files that are placed on your device, with your permission, enabling websites to store data such as the contents of your shopping basket or which pages you have visited.</p>
+    <!--<p class="atm-txt-lt text-lg pb-2">We use cookies to gather information on how you use the <i>{env.URL}</i> website, such as the pages that you visit ending with <i>{env.URL}</i> in the URL.</p>-->
+    <p class="atm-txt-lt text-lg pb-2">For more details please see our <a class="atm-lnk-cl" href="/en/cookies">Cookie Policy</a>.</p>
+    
+    <!--
+    <h3 id="what-personal-data-do-we-gather" class="atm-h4-lt">What personal data do we gather</h3>
+    <p class="atm-txt-lt text-lg pb-2">We may collect the following information:</p>
+
+    <div class="ps-6">
+      <h4 class="atm-h6-lt">Google Analytics</h4>
+      <p class="atm-txt-lt text-lg pb-2">We may collect the following information:</p>
+      <ul>
+        <li class="atm-txt-lt text-lg ps-6 pb-2">Number of users</li>
+        <li class="atm-txt-lt text-lg ps-6 pb-2">Session statistics</li>
+        <li class="atm-txt-lt text-lg ps-6 pb-2">Approximate geolocation</li>
+        <li class="atm-txt-lt text-lg ps-6 pb-2">Browser and device information</li>
+      </ul>
+    </div>
+
+    <h3 id="what-we-do-with-your-data" class="atm-h4-lt">What we do with your data</h3>
+    <div class="ps-6">
+      <h4 class="atm-h6-lt">Google Analytics</h4>
+      <p class="atm-txt-lt text-lg pb-2">Our Site uses Google Analytics to collect data via Cookies. All data is anonymised, so can`t be linked to a specific website visitor. We use this data to understand how you use our website enabling us to improve its design and functionality. To learn more about how Google's safeguards your data, click <a class="atm-lnk-cl" href="https://support.google.com/analytics/answer/6004245?hl=en#zippy=" rel="nofollow nopener noreferrer" target="_blank">here</a>.</p>
+      <h4 class="atm-h6-lt">Google Maps</h4>
+      <p class="atm-txt-lt text-lg pb-2">Our Site embeds Google Maps to provide users with our location and means to easily find us. Premier Image Services Ltd, does not collect, have access to, store or process any data relating to Google Maps. To learn more about how Google Maps protects your privacy, click <a class="atm-lnk-cl" href="https://support.google.com/maps/answer/10400210?hl=en" rel="nofollow nopener noreferrer" target="_blank">here</a>.</p>
+    </div>
+  
+    <h3 id="where-do-we-store-and-process-your-data" class="atm-h4-lt">Where do we store and process your data</h3>
+    <div class="ps-6">
+      <h4 class="atm-h6-lt">Google Analytics</h4>
+      <p class="atm-txt-lt text-lg pb-2">Your anonymised data is stored on the Google Analytics platform.</p>
+      <p class="atm-txt-lt text-lg pb-2">As noted by the Information Commissioners Office, once anonymised, the data ceases to be considered personal data.</p>
+      <p class="atm-txt-lt text-lg pb-2">The anonymised data is processed at: Unit 3, Premier Park, Road One, Winsford Industrial Estate, Winsford, Cheshire, CW7 3PH via the Google Analytics platform.</p>
+      <h4 class="atm-h6-lt">Google Maps</h4>
+      <p class="atm-txt-lt text-lg pb-2"> Premier Image Services Ltd, does not have access to, store or process any data collected by Google Maps.</p>
+    </div>
+  
+    <h3 id="how-long-is-anonymised-data-retained" class="atm-h4-lt">How long is anonymised data retained</h3>
+    <p class="atm-txt-lt text-lg pb-2">Anonymised data is retained on the Google Analytics service for up to 26 months.</p>
+  
+    <h3 id="what-choices-to-I-have-about-how-my-data-is-used" class="atm-h4-lt">What choices to I have about how my data is used</h3>
+    <p class="atm-txt-lt text-lg pb-2">Your data is anonymised, and can`t be tracked to a specific user, so can't be identified for the purposes of a GDPR data request, removal etc.</p>
+    <p class="atm-txt-lt text-lg pb-2">If you do not wish to permit anonymised data to be stored/processed please do not consent to the use of Cookes by our website.</p>
+    -->
+
+    <h3 id="External-websites-and-sources" class="atm-h4-lt">External websites and sources</h3>
+    <p class="atm-txt-lt text-lg pb-2">Please note this site may include links and/or host data from other websites, your data will be subject to the privacy policies of those sites. Please check any linked websites Privacy Policy before providing any data to them.</p>
+
+    <h3 id="analytics" class="atm-h4-lt">Analytics</h3>
+    <p class="atm-txt-lt text-lg pb-2">Analytics are used to understand user behavior and gather insights for optimizing site performance, improving user experience, and achieving business goals.</p>
+    <p class="atm-txt-lt text-lg pb-2">At Premier Image Services Ltd, we understand that your privacy is important to you, and have opted to utilise <a href="https://www.cloudflare.com/en-gb/web-analytics/" class="atm-lnk-cl">Cloudflare Website Analytics</a>.</p>
+    
+    <BlockQuote QuoteLink="https://www.cloudflare.com/en-gb/web-analytics/" QuoteTitle="Privacy First | cloudflare.com">
+      Cloudflare Web Analytics does not use any client-side state, such as cookies or localStorage, to collect usage metrics. We also don’t “fingerprint” individuals via their IP address, User Agent string, or any other data for the purpose of displaying analytics.
+    </BlockQuote>
+    
+    <h3 id="privacy-policy-changes" class="atm-h4-lt">Privacy Policy changes</h3>
+    <p class="atm-txt-lt text-lg pb-2">Changes may be necessary to this privacy policy. If any changes are made, they will appear on this page. Please periodically check this page to ensure that you are happy with any changes.</p>
+
+    <h3 id="contact-details" class="atm-h4-lt">Contact Details</h3>
+    <p class="atm-txt-lt text-lg pb-2">If you need to contact us using one of the following methods:</p>
+
+    <div class="ps-6">
+      <div class="grid grid-cols-[max-content_1fr] gap-x-4 pb-2">
+        <div>
+          <p class="atm-txt-lt w-16 text-lg">Address:</p>
+        </div>
+        <div>
+          <p class="atm-txt-lt text-lg">Premier Image Services Ltd</p>
+          <p class="atm-txt-lt text-lg">Unit 1 Nat Lane Business Park</p>
+          <p class="atm-txt-lt text-lg">Nat Lane</p>
+          <p class="atm-txt-lt text-lg">Winsford</p>
+          <p class="atm-txt-lt text-lg">CW7 3PH</p>
+        </div>
+      </div>
+    
+      <div class="grid grid-cols-[max-content_1fr] gap-x-4 pb-2">
+        <div>
+          <p class="atm-txt-lt w-16 text-lg">Email:</p>
+        </div>
+        <div>
+          <p class="atm-txt-lt text-lg">customerservice@premierimage.co.uk</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[max-content_1fr] gap-x-4 pb-2">
+        <div>
+          <p class="atm-txt-lt w-16 text-lg">Phone:</p>
+        </div>
+        <div>
+          <p class="atm-txt-lt text-lg">(+44) 01606 596813</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</BridgePageTemplate>

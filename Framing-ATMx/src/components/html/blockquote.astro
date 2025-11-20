@@ -1,0 +1,14 @@
+---
+const { QuoteLink, QuoteTitle } = Astro.props;
+---
+
+<div class="py-2">
+<blockquote class="relative border-s-4 atm-border ps-4 sm:ps-6">
+  <p class="sm:text-xl atm-txt-lt"><em>
+    <slot />
+  </em></p>
+  <div class='pt-2'>
+    <a class="text-xs atm-lnk-lt" href={QuoteLink} target='_blank' rel='noopener noreferrer'>{QuoteTitle}</a>
+  </div>
+</blockquote>
+</div>

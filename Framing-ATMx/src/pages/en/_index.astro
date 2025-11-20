@@ -1,0 +1,216 @@
+---
+/* Revised 27-02-25 CK */
+import DefaultTemplate from '@layouts/default.astro';
+import { Image } from 'astro:assets';
+
+import FeatureImage from '@assets/index/nat-lane-fade.jpg';
+import Chromaluxe from '@assets/index/chromaluxe.jpg';
+import Drytac from '@assets/index/drytac.jpg';
+import Epson from '@assets/index/epson.jpg';
+import FineArt from '@assets/index/fineart_guild.jpg';
+import FujiFilm from '@assets/index/fujifilm.jpg';
+import ZBE from '@assets/index/zbe.jpg';
+import Framing from '@assets/index/framing-premier.webp';
+import Restoration from '@assets/index/restoration-premier.webp';
+import Printing from '@assets/index/printing.webp';
+import Mounting from '@assets/index/mounting.webp';
+import Chromavision from '@assets/index/chromavision-room.webp';
+import Hahnemuhle from '@assets/index/hahnemuhle.gif';
+
+import { getLangFromUrl } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const SEO = {
+  title: 'Premier Image',
+  description: 'Premier Image is a printing and picture framing company based in Cheshire, England. Offering a range of products and services catering to both professional and semi-professional photographers, our team of experienced staff will ensure the highest quality products are delivered direct to your door.',
+  robots: 'index,follow',
+};
+const headings:any[] = [];
+---
+
+<DefaultTemplate SEO={SEO} headings={headings}>
+  <main id="content" class="w-full justify-start" role="main">
+    <!-- Feature -->
+    <div class="w-full atm-feature-bg">
+      <Image src={FeatureImage} alt="Premier Image Services Ltd Production Facility" loading='eager' />
+      <div class="w-full atm-container atm-feature-ctr">
+        <h1 class="text-5xl md:text-7xl text-gray-800">Premier Image</h1>
+        <span class="text-4xl text-gray-800 pt-2 hidden opacity-85 lg:block">25 years' experience of printing and handmade framing</span>
+      </div>
+      <div class="atm-feature-dtl w-full atm-container grid grid-cols-7 gap-4">
+        <Image src={Epson} class="" alt="Epson Logo" />
+        <Image src={FujiFilm} class="" alt="FujiFilm Logo" />
+        <Image src={Chromaluxe} class="" alt="Chromaluxe Logo" />
+        <Image src={FineArt} class="" alt="FineArt Logo" />
+        <Image src={ZBE} class="" alt="ZBE Logo" />
+        <Image src={Drytac} class="" alt="Drytac Logo" />
+        <Image src={Hahnemuhle} class="" alt="Hahnemuhle Logo" />
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about-us" class="w-full atm-container py-12">
+      <h2 class="atm-hd-lt text-4xl pt-4">About</h2>
+      <span class="atm-hd-lt text-6xl pb-4">Premier Image</span>
+      <div class="gap-x-8 lg:columns-2">
+        <p class="atm-txt-lt text-lg">Our main activities are photographic printing, handmade framing and the assembly of artwork. With over 25 years' experience of printing and handmade framing, we have helped artists, illustrators and photographers from all over the UK and abroad to reproduce and frame their artwork. However, we also recieve orders from amateur photographers, artists and anyone we can assist with our services.</p>
+        <p class="atm-txt-lt text-lg">We specialise in various printing techniques which allows reproductions of work printed to a high quality specification, working with many organisations in the industry to fulfil our customers requirements. As members of the Fine Art Trade Guild, you know that we are working to the Guild's very high standards, giving buyers extra confidence in both the quality of the artwork and the framing.</p>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div id="services">
+      <div class="w-full atm-container pt-12">
+        <h2 class="atm-hd-lt text-4xl pt-4">Our</h2>
+        <span class="atm-hd-lt text-6xl pb-4">Services</span>
+      </div>
+      
+      <div class="w-full atm-container pb-12 gap-x-8 lg:columns-2">   
+        <p class="atm-txt-lt pb-2 text-lg">Premier Image offers a variety of professional photographic and imaging services, ensuring you get the very best out of your images. We are equipped with the technology to provide the highest quality, fine art wide format prints from your original digital files.</p>
+        <p class="atm-txt-lt pb-2 text-lg">We offer a selection of premium quality archival photo papers and fine art papers. Once printed we have a range of cost effective and practical mounting options to display your artwork and prints, or we can suggest a framing solution using our range of sample mouldings and mounts.</p>
+        <p class="atm-txt-lt pb-2 text-lg">The core services we provide are below, but we specialise in so much more, please contact us if the service you require isn't listed.</p>
+        <div class="grid grid-cols-5 gap-0">
+          <div></div>
+          <ul class="col-span-3">
+            <li class="atm-lnk-lt font-medium pb-2"><a class="text-lg" href={`/${lang}/#printing`}>Printing</a><span class="atm-txt-lt font-light text-lg italic"> - Photographic, Giclée, Inkjet</span></li>
+            <li class="atm-lnk-lt font-medium pb-2"><a class="text-lg" href={`/${lang}/#chromaluxe`}>Chromaluxe</a><span class="atm-txt-lt text-lg font-light italic"> - (60" x 40" maximum)</span></li>
+            <li class="atm-lnk-lt font-medium pb-2"><a class="text-lg" href={`/${lang}/#mounting`}>Mounting</a><span class="atm-txt-lt text-lg font-light italic"> - Bespoke mount options</span></li>
+            <li class="atm-lnk-lt font-medium pb-2"><a class="text-lg" href={`/${lang}/#framing`}>Framing</a><span class="atm-txt-lt text-lg font-light italic"> - Bespoke picture framing</span></li>
+            <li class="atm-lnk-lt font-medium pb-2"><a class="text-lg" href={`/${lang}/#restoration`}}>Digital Restoration</a><span class="atm-txt-lt text-lg font-light italic"></span></li>
+          </ul>
+          <div></div>
+        </div>
+      </div>
+    
+      <div id="printing" class="w-full atm-container py-12">
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <Image src={Printing} class="w-full" alt="Printing portraiture" />
+          </div>
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Printing</h3>
+              <p class="atm-txt-lt pb-2 text-lg">We offer a full range of photographic printing services to fine art photographers, digital artists, illustrators, galleries and commercial businesses.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Using the latest digital printers and processors up to 30 inches wide to any print length.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Giclée, inkjet and other print options are available.</p>
+              <p class="atm-txt-lt pb-2 text-lg">For those non-professionals, we can print from digital files to help create a lasting memory. which could be combined with our other serivces to mount and frame the print, creating somthing special and bespoke for your home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="chromaluxe" class="w-full atm-container py-12">
+        <Image src={Chromavision} class="w-full lg:hidden" alt="Chromaluxe" />
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Chromaluxe</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Chromaluxe’s unique aluminum sheets produce extremely vibrant images.</p>
+              <p class="atm-txt-lt pb-2 text-lg">These works of art are created using a method called dye sublimation. Unlike printing on to surfaces, with this process your image is inside the material meaning more protection and helping maintain its vibrant colours.</p>
+              <p class="atm-txt-lt pb-2 text-lg">At Premier Image we are in the enviable position where we are one of the few manufacturers able to sublimate in large format (70×42 inches maximum) Chromaluxe can be supplied in a number of finishes which are available on request.</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <Image src={Chromavision} class="w-full hidden lg:block" alt="Chromavision in room scene" />
+          </div>
+        </div>
+      </div>
+
+      <div id="mounting" class="w-full atm-container py-12">
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <Image src={Mounting} class="w-full" alt="Mounting" />
+          </div>
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Mounting</h3>
+              <p class="atm-txt-lt pb-2 text-lg">We have an extensive mountboard range offering a wide selection of colours, textures, styles and properties to suit your artwork. We now offer a comprehensive mount cutting service.</p>
+              <p class="atm-txt-lt pb-2 text-lg">At the touch of a button we can provide just a single mount using the latest in mount cutting technology.</p>
+              <p class="atm-txt-lt pb-2 text-lg">We can mount artwork for you, ready to frame, or we can of course offer the complete mounting and framing service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="framing" class="w-full atm-container py-12">
+        <Image src={Framing} class="w-full aspect-video lg:hidden" alt="Picture framing" />
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Framing</h3>
+              <p class="atm-txt-lt pb-2 text-lg">We offer a professional picture framing service to the fine art market, art professionals and galleries. Alternatively, you don't have to be a professional. If you have a holiday picture, wedding or graduation picture, football shirt or record that requires some special attention we can frame that too. Our onsite artwork mounting and framing service will give your images the high quality finish that they truly deserve.</p>
+              <p class="atm-txt-lt pb-2 text-lg">We offer contract framing services or custom made picture frames made to your specifications, or you can choose from our standard size frames that are boxed ready to give to your customers.</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <Image src={Framing} class="w-full hidden lg:block" alt="Digital picture restoration" />
+          </div>
+        </div>
+      </div>
+
+      <div id="restoration" class="w-full atm-container py-12">
+        <div class="w-full grid lg:grid-cols-2 gap-x-8">
+          <div class="flex justify-center items-center">
+            <Image src={Restoration} class="w-full" alt="Digital picture restoration" />
+          </div>
+          <div class="flex justify-center items-center">
+            <div>
+              <h3 class="atm-hd-lt text-5xl pb-2">Digital Restoration</h3>
+              <p class="atm-txt-lt pb-2 text-lg">Premier Image offers a photo retouching and restoration service, digital image processing is used to improve the quality of images by retouching scans of photographic prints, as well as restoring old memento images.</p>
+              <p class="atm-txt-lt pb-2 text-lg">Digital processing is also used for altering digital images, e.g. eliminating imperfections, removing unwanted elements accidentally caught by the camera, adding a different background or amendments specific to your requirements. There are limitations, but we are happy to discuss possible options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div id="contact-us" class="w-full bg-mauve-500 dark:bg-mauve-300">
+    <div class="w-full atm-container py-12">
+      <div class="w-full mt-3 grid lg:grid-cols-2 gap-x-8">
+        <div>
+          <h2 class="atm-hd-dk text-4xl pt-4">Contact</h2>
+          <span class="atm-hd-dk text-6xl pb-4">Premier Image</span>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Address:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">Premier Image Services Ltd</p>
+              <p class="atm-txt-dk text-lg">Unit 1 Nat Lane Business Park</p>
+              <p class="atm-txt-dk text-lg">Nat Lane</p>
+              <p class="atm-txt-dk text-lg">Winsford</p>
+              <p class="atm-txt-dk text-lg">CW7 3BS</p>
+            </div>
+          </div>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Email:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">customerservice@premierimage.co.uk</p>
+            </div>
+          </div>
+        
+          <div class="w-full mt-3 grid grid-cols-5">
+            <div>
+              <p class="atm-txt-dk text-lg">Phone:</p>
+            </div>
+            <div class="col-span-4">
+              <p class="atm-txt-dk text-lg">(+44) 01606 596813</p>
+            </div>
+          </div>
+        </div>
+  
+        <div
+          data-service="googlemaps"
+          data-id="!1m14!1m8!1m3!1d9559.643874374622!2d-2.4994458!3d53.2015129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487af945e35c8d41%3A0x94be107dfa0670bc!2sPremier%20Image!5e0!3m2!1sen!2suk!4v1676553118634!5m2!1sen!2suk"
+          data-autoscale>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultTemplate>

@@ -1,0 +1,52 @@
+---
+//import 'vanilla-cookieconsent/dist/cookieconsent.css';
+---
+
+<script>
+  // @ts-ignore
+  import { run } from 'vanilla-cookieconsent';
+  import { config } from './cookie.consent.config';
+
+  import "@orestbida/iframemanager";
+  //import "@orestbida/iframemanager/dist/iframemanager.css";
+
+    // @ts-ignore
+    const im = iframemanager();
+
+    im.run({
+      currLang: 'en',
+      services : {
+        youtube : {
+          embedUrl: 'https://www.youtube-nocookie.com/embed/{data-id}',
+          thumbnailUrl: 'https://i3.ytimg.com/vi/{data-id}/hqdefault.jpg',
+          iframe : {
+            allow : 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen;'
+          },
+          languages : {
+            en : {
+              notice: '<a rel="noreferrer noopener" href="https://www.youtube.com" target="_blank">YouTube</a> content is hosted by a third party. By enabling this externally hosted content you accept the <a rel="noreferrer noopener" href="https://www.youtube.com/t/terms" target="_blank">terms and conditions</a> and <a href="https://policies.google.com/privacy/" target="_blank">privacy policy</a> of youtube.com.',
+              loadBtn: 'Load video',
+              loadAllBtn: `Don't ask again`
+            }
+          }
+        },
+
+        googlemaps : {
+          embedUrl: 'https://www.google.com/maps/embed?pb={data-id}',
+          iframe: {
+            allow : 'picture-in-picture; fullscreen;'
+          },
+          languages : {
+            en : {
+              notice: '<a rel="noreferrer noopener" href="https://www.google.com/maps" target="_blank">Google Maps</a> content is hosted by a third party. By enabling this externally hosted content you accept the <a rel="noreferrer noopener" href="https://cloud.google.com/maps-platform/terms" target="_blank">terms and conditions</a> and <a href="https://policies.google.com/privacy/" target="_blank">privacy policy</a> of google.com.',
+              loadBtn: 'Load map',
+              loadAllBtn: "Don't ask again"
+            }
+          }
+        }
+      }
+    });
+
+
+  run(config);
+</script>

@@ -1,0 +1,12 @@
+---
+import { Picture } from 'astro:assets';
+const { ImgAlt, ImgImport, ImgLink, ImgTitle } = Astro.props;
+---
+
+<div class="py-2">
+  <Picture class="atm-lnk-lt" src={ImgImport} formats={['avif', 'webp']} alt={ImgAlt} />
+  <p class='text-sm italic atm-lnk-lt'>
+    Source: 
+    <a href={ImgLink} target='_blank' rel='noopener noreferrer'>{ImgTitle}</a>
+  </p>
+</div>
