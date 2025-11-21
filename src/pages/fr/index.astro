@@ -1,0 +1,22 @@
+---
+import DefaultTemplate from '@layouts/default.astro';
+
+const SEO = {
+  title: 'justaskframing.co.uk',
+  description: 'justaskframing.co.uk a brand of Premier Image Services Ltd.',
+  robots: 'index,follow',
+};
+const headings:any[] = [];
+---
+
+<DefaultTemplate SEO={SEO} headings={headings}>
+  <main id="content" class="w-full justify-start" role="main">
+    <!-- Feature -->
+    <div class="w-full atm-feature-bg">
+      <div class="w-full atm-container atm-feature-ctr">
+        <h1 class="text-5xl md:text-7xl text-gray-800 dark:text-neutral-100 mt-36 md:mt-72 pt-36 md:pt-72 pb-8">Coming Soon</h1>
+        <span class="text-2xl md:text-4xl text-gray-800 dark:text-neutral-100 pt-2 opacity-85">justaskframing.co.uk a company dedicated to framing your family memorabilia.</span>
+      </div>
+    </div>
+  </main>
+</DefaultTemplate>

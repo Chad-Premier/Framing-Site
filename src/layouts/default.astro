@@ -6,15 +6,18 @@ import FlagUK from '@assets/svg/flag.uk.astro';
 import FlagES from '@assets/svg/flag.es.astro';
 import FlagFR from '@assets/svg/flag.fr.astro';
 import '@styles/base.css';
+
+import { Image } from 'astro:assets';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import CarrotDown from '@assets/svg/carrot-down.astro';
+import PremierLogo50px from '@assets/premier_logo_50x50px.png';
 import { env } from '@components/env';
 
 const lang = getLangFromUrl(Astro.url);
 const i18n = '/'+lang+'/';
 const t = useTranslations(lang);
 
-const { SEO } = Astro.props;
+const { headings, SEO } = Astro.props;
 
 const defaults = {
   href: "https://" + env.URL + lang,
@@ -53,7 +56,7 @@ const defaults = {
       <nav class="atm-container relative w-full lg:flex lg:items-center lg:justify-between" aria-label="Global">
         <div class="flex items-center justify-between">
           <a class="inline-flex items-center" href={`/${lang}/`} aria-label="Brand">
-            <h6 class="font-semibold atm-h6-lt ps-2 pb-3">justaskframing.co.uk</h6>
+            <span class="py-2 pe-2"><Image src={PremierLogo50px} class="w-full" alt="Premier Image Brand" /></span><h6 class="font-semibold atm-h6-lt ps-2 pb-3">justaskframing.co.uk</h6>
           </a>
    
           <div class="grow"></div>
@@ -70,7 +73,7 @@ const defaults = {
               <Hamburger/>
             </button>
           </div>
-        </div>     
+        </div>      
    
         <div class="lg:block hidden">
           <div class="ms-5 ps-5 border-l atm-border">
@@ -81,14 +84,15 @@ const defaults = {
       </nav>
     </header>
 
+
     <!-- Content -->
     <main id="content" class="pt-3">
       <slot />
     </main>
 
     <!-- Footer -->
-    <footer class="atm-container sticky top-[100vh] w-full pb-6 pt-12">    
-      <div class="pt-5 mt-3 border-t atm-border">
+    <footer class="atm-container sticky top-[100vh] w-full pb-6 pt-12">   
+      <div class="pt-5 mt-3 border-t atm-border">    
         <div class="sm:flex sm:justify-between sm:items-center">
           <div class="flex items-center gap-x-3">
             <p class="text-xs sm:text-sm atm-lnk-lt">
@@ -96,7 +100,7 @@ const defaults = {
             </p>
           </div>
     
-          <div class="flex justify-between items-center">  
+          <div class="flex justify-between items-center">
             <div class="hs-dropdown relative inline-flex [--placement:top-left]">
               <button id="footer-language-dropdown" type="button" class="hs-dropdown-toggle px-3 inline-flex items-center gap-x-2 text-sm disabled:pointer-events-none capitalize atm-lnk-lt">
                 {
@@ -116,6 +120,7 @@ const defaults = {
         </div>
       </div>
     </footer>
+
   </body>
 </html>
 
